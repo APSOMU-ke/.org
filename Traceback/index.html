@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>APSOMU</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <nav>
+      <div class="logo">
+        <img src="logo.png" alt="APSOMU Logo">
+        <span>Equality for All</span>
+      </div>
+      <div class="nav-links">
+        <ul>
+          <li><a href="#home" class="active">HOME</a></li>
+          <li><a href="#about">ABOUT</a></li>
+          <li><a href="goals.html">GOALS</a></li>
+          <li><a href="impacts.html">IMPACTS</a></li>
+          <li><a href="events.html">EVENTS</a></li>
+          <li><a href="gallery.html">GALLERY</a></li>
+        </ul>
+        <a href="#" class="partner-btn">Connect with Us</a>
+      </div>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-slides">
+      <div class="slide active" style="background-image: url('background (1).jpg')"></div>
+      <div class="slide" style="background-image: url('background (2).jpg')"></div>
+      <div class="slide" style="background-image: url('background (3).jpg')"></div>
+    </div>
+    <div class="hero-content">
+      <h1>APSOMU<br><span class="hero-subtitle">Equality For <span class="highlight">All</span></span></h1>
+      <p>Empowering Political Science students to learn, connect, and lead for a better society.</p>
+      <div class="buttons">
+        <a href="#" class="btn-primary">Why APSOMU <span class="arrow-right">→</span></a>
+        <a href="#" class="btn-outline">Sign Up</a>
+      </div>
+      <div class="carousel-indicators">
+        <span class="dot active" onclick="setSlide(0)"></span>
+        <span class="dot" onclick="setSlide(1)"></span>
+        <span class="dot" onclick="setSlide(2)"></span>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="about-section">
+    <div class="about-container">
+      <div class="about-text">
+        <h2>About <span class="highlight-green">APSOMU</span></h2>
+        <p>The Association of Political Science Students of Moi University (APSOMU) is a student-led organization
+          dedicated
+          to empowering Political Science scholars through academic enrichment, professional development, and community
+          engagement.</p>
+        <p>Founded to address the pressing questions and aspirations of students, APSOMU provides a platform where
+          learners
+          can explore the discipline beyond the classroom, connect with practitioners, and prepare for impactful careers
+          in governance, policy, and public service.</p>
+      </div>
+      <div class="about-stats">
+        <div class="stats-grid">
+          <div class="stat-card">
+            <h3>2023</h3>
+            <span>Established</span>
+          </div>
+          <div class="stat-card">
+            <h3>200+</h3>
+            <span>Members</span>
+          </div>
+          <div class="stat-card founder-card">
+            <div class="founder-image-container">
+              <!-- Placeholder for founder image -->
+              <img src="https://via.placeholder.com/150" alt="Founder" class="founder-img">
+            </div>
+            <span>Founder</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="stakeholders" class="sdg-section" style="text-align: center;">
+    <div class="stakeholder-header" style="margin-bottom: 3rem;">
+      <h2 style="font-size: 3rem; font-weight: 800;">Stakeholders of our <span
+          class="highlight-green">Association</span></h2>
+    </div>
+    <div class="sdg-container">
+      <div class="sdg-grid stakeholder-grid">
+        <div class="sdg-tile stakeholder-tile active" data-stakeholder="1">
+          <span class="stakeholder-title">1. Students</span>
+          <img src="https://via.placeholder.com/100?text=Students" alt="Students" class="stakeholder-icon">
+        </div>
+        <div class="sdg-tile stakeholder-tile" data-stakeholder="2">
+          <span class="stakeholder-title">2. Scholars</span>
+          <img src="https://via.placeholder.com/100?text=Scholars" alt="Scholars" class="stakeholder-icon">
+        </div>
+        <div class="sdg-tile stakeholder-tile" data-stakeholder="3">
+          <span class="stakeholder-title">3. Higher Education</span>
+          <img src="https://via.placeholder.com/100?text=Institutions" alt="Higher Education" class="stakeholder-icon">
+        </div>
+        <div class="sdg-tile stakeholder-tile" data-stakeholder="4">
+          <span class="stakeholder-title">4. Government</span>
+          <img src="https://via.placeholder.com/100?text=Government" alt="Government" class="stakeholder-icon">
+        </div>
+        <div class="sdg-tile stakeholder-tile" data-stakeholder="5">
+          <span class="stakeholder-title">5. Other Organizations</span>
+          <img src="https://via.placeholder.com/100?text=Community" alt="Other Organizations" class="stakeholder-icon">
+        </div>
+      </div>
+      <div id="sdg-info-card" class="sdg-info-card">
+        <h2 id="sdg-info-title">Students</h2>
+        <p id="sdg-info-description">Students are the main stakeholders, APSOMU is primarily focused on promoting and
+          advancing study of political science among students.</p>
+        <div class="sdg-info-icon">
+          <img id="stakeholder-info-img" src="https://via.placeholder.com/120?text=Students" alt="Stakeholder Icon"
+            style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="instagram" class="instagram-section">
+    <div class="instagram-container">
+      <h2>Follow Our <span class="highlight-green">Journey</span></h2>
+      <p class="instagram-subtitle">Stay connected with our latest updates on Instagram</p>
+
+      <div class="instagram-grid">
+        <div class="instagram-post">
+          <img src="https://via.placeholder.com/300x300/e5243b/ffffff?text=Post+1" alt="Instagram post 1">
+        </div>
+        <div class="instagram-post">
+          <img src="https://via.placeholder.com/300x300/4c9f38/ffffff?text=Post+2" alt="Instagram post 2">
+        </div>
+        <div class="instagram-post">
+          <img src="https://via.placeholder.com/300x300/c5192d/ffffff?text=Post+3" alt="Instagram post 3">
+        </div>
+        <div class="instagram-post">
+          <img src="https://via.placeholder.com/300x300/26bde2/ffffff?text=Post+4" alt="Instagram post 4">
+        </div>
+        <div class="instagram-post">
+          <img src="https://via.placeholder.com/300x300/a21942/ffffff?text=Post+5" alt="Instagram post 5">
+        </div>
+        <div class="instagram-post">
+          <img src="https://via.placeholder.com/300x300/fd9d24/ffffff?text=Post+6" alt="Instagram post 6">
+        </div>
+      </div>
+
+      <a href="https://www.instagram.com/hok_africa" target="_blank" rel="noopener" class="instagram-button">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+            fill="white" />
+        </svg>
+        Follow @hok_africa
+      </a>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

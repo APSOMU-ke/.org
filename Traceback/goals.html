@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goals - APSOMU</title>
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="goals.css">
+</head>
+
+<body>
+
+    <!-- Navigation (Light Theme) -->
+    <nav class="goals-nav">
+        <a href="index.html" class="logo">APSOMU</a>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="goals.html" class="active">Goals</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Scroll Container -->
+    <div class="goals-container">
+
+        <!-- Section 1: Short Term - Academic Advance (Left Aligned) -->
+        <section class="goal-section left">
+            <!-- Using placeholder images that fit the theme -->
+            <img src="Launching (20).jpg" alt="Academic Discussion" class="goal-bg">
+            <div class="goal-overlay">
+                <i class="fas fa-graduation-cap goal-icon anim-fade-down delay-100"></i>
+                <!-- MAIN CATEGORY HEADING -->
+                <h1 class="category-heading anim-fade-down delay-200">SHORT TERM<br>GOALS</h1>
+                <h2 class="goal-title anim-fade-up delay-300">Promoting Political Science</h2>
+                <p class="goal-desc anim-fade-up delay-400">
+                    The organization aims to promote and advance the study of Political Science among students. We
+                    foster an environment where academic excellence is not just a goal, but a culture.
+                </p>
+            </div>
+            <div class="scroll-indicator">
+                <i class="fas fa-chevron-down"></i> SCROLL
+            </div>
+        </section>
+
+        <!-- Section 2: Short Term - Events & Discussion (Right Aligned) -->
+        <section class="goal-section right">
+            <img src="Launching (30).jpg" alt="Seminars and Workshops" class="goal-bg">
+            <div class="goal-overlay">
+                <i class="fas fa-comments goal-icon anim-zoom-in delay-100"></i>
+                <span class="goal-tag anim-fade-right delay-200">Short Term Goal</span>
+                <h2 class="goal-title main anim-fade-right delay-300">Conferences &<br>Seminars</h2>
+                <p class="goal-desc anim-fade-right delay-400">
+                    Through organizing events such as conferences, seminars, and workshops, we facilitate academic
+                    discussion and provide opportunities for students to engage directly with Political Science scholars
+                    and practitioners.
+                </p>
+            </div>
+        </section>
+
+        <!-- Section 3: Short Term - Resources (Left Aligned) -->
+        <section class="goal-section left">
+            <img src="Launching (10).jpg" alt="Mentorship" class="goal-bg">
+            <div class="goal-overlay">
+                <i class="fas fa-hands-helping goal-icon anim-fade-left delay-100"></i>
+                <span class="goal-tag anim-fade-left delay-200">Short Term Goal</span>
+                <h2 class="goal-title main anim-fade-left delay-300">Resources &<br>Mentorship</h2>
+                <p class="goal-desc anim-fade-left delay-400">
+                    We provide resources and support for students to excel in their studies through dedicated study
+                    groups, mentorship programs, and networking opportunities.
+                </p>
+            </div>
+        </section>
+
+        <!-- Section 4: Long Term - Leadership (Right Aligned) -->
+        <section class="goal-section right">
+            <img src="Launching (40).jpg" alt="Leadership" class="goal-bg">
+            <div class="goal-overlay">
+                <i class="fas fa-globe-africa goal-icon anim-zoom-in delay-100"></i>
+                <!-- MAIN CATEGORY HEADING -->
+                <h1 class="category-heading anim-fade-up delay-200">LONG TERM<br>GOALS</h1>
+                <h2 class="goal-title anim-fade-up delay-300">A Leading Organization</h2>
+                <p class="goal-desc anim-fade-up delay-400">
+                    To be a leading organization in the field of Political Science, through the promotion of research
+                    and scholarships among its members.
+                </p>
+            </div>
+        </section>
+
+        <!-- Section 5: Long Term - Policy & Partnership (Left Aligned) -->
+        <section class="goal-section left">
+            <img src="Launching (5).jpg" alt="Policy Influence" class="goal-bg">
+            <div class="goal-overlay">
+                <i class="fas fa-balance-scale goal-icon anim-fade-down delay-100"></i>
+                <span class="goal-tag anim-fade-right delay-200">Long Term Goal</span>
+                <h2 class="goal-title main anim-fade-right delay-300">Policy &<br>Partnership</h2>
+                <p class="goal-desc anim-fade-right delay-400">
+                    Set to influence policy and contribute to the development of Political Science as a discipline
+                    within higher education. We foster collaboration and partnership with other organizations and
+                    institutions to advance the field.
+                </p>
+            </div>
+        </section>
+
+    </div>
+
+    <script>
+        // Intersection Observer for Scroll Animations
+        const observerOptions = {
+            root: document.querySelector('.goals-container'),
+            threshold: 0.4
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('display-active');
+                } else {
+                    entry.target.classList.remove('display-active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.goal-section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+
+</body>
+
+</html>

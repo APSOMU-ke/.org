@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - APSOMU</title>
+    <!-- Inter Font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Swiper.js CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- JSZip -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/gallery.css">
+    <link rel="stylesheet" href="css/nav.css">
+</head>
+
+<body>
+    <header class="gallery-nav">
+        <nav>
+            <div class="logo">
+                <span style="color: #000; font-weight: bold;">APSOMU</span>
+            </div>
+
+            <ul class="nav-tabs desktop-nav">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="goals.html">Goals</a></li>
+                <li><a href="impacts.html">Impacts</a></li>
+                <li><a href="gallery.html" class="active">Gallery</a></li>
+                <li><a href="events.html">Events</a></li>
+            </ul>
+            <a href="index.html#contact" class="partner-btn desktop-nav">Connect</a>
+
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-menu-toggle" id="mobile-menu-btn">
+                <span class="menu-text">Menu</span>
+                <svg class="hamburger-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+                <svg class="close-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2" style="display: none;">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+        </nav>
+
+        <!-- Mobile Dropdown Drawer -->
+        <div class="mobile-drawer" id="mobile-drawer">
+            <ul class="mobile-nav-list">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="goals.html">Goals</a></li>
+                <li><a href="impacts.html">Impacts</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="gallery.html" class="active">Gallery</a></li>
+            </ul>
+            <a href="#" class="mobile-partner-btn">Connect with Us</a>
+        </div>
+    </header>
+
+
+
+    <main>
+        <!-- Section 1: Members -->
+        <section id="members" class="gallery-section style1-section" style="background: #050505; color: #fff;">
+            <div class="category-header">
+                <h2>Our Members</h2>
+                <p>The Heart of APSOMU</p>
+            </div>
+            <div class="swiper members-swiper" style="width: 100%; padding-bottom: 50px;">
+                <div class="swiper-wrapper" id="members-wrapper"></div>
+                <div class="swiper-pagination" style="bottom: 0;"></div>
+            </div>
+        </section>
+
+        <!-- Section 2: Launching -->
+        <section id="launching" class="gallery-section style1-section" style="background: #111; color: #fff;">
+            <div class="category-header">
+                <h2>Association Launch</h2>
+                <p>Witness the beginning of a structured platform for students.</p>
+            </div>
+            <div class="swiper launching-swiper" style="width: 100%; padding-bottom: 50px;">
+                <div class="swiper-wrapper" id="launching-wrapper"></div>
+                <div class="swiper-pagination" style="bottom: 0;"></div>
+            </div>
+        </section>
+
+        <!-- Section 3: Public Lecture -->
+        <section id="lecture" class="gallery-section style1-section" style="background: #050505; color: #fff;">
+            <div class="category-header">
+                <h2>Prof. PLO Lumumba Public Lecture</h2>
+                <p>Ethical Leadership & Governance Insights</p>
+            </div>
+            <div class="swiper lecture-swiper" style="width: 100%; padding-bottom: 50px;">
+                <div class="swiper-wrapper" id="lecture-wrapper"></div>
+                <div class="swiper-pagination" style="bottom: 0;"></div>
+            </div>
+        </section>
+
+        <!-- Section 4: County Assembly -->
+        <section id="county-visit" class="gallery-section style1-section" style="background: #111; color: #fff;">
+            <div class="category-header">
+                <h2>County Assembly Visit</h2>
+                <p>Bridging Theory and Practice</p>
+            </div>
+            <div class="swiper county-swiper" style="width: 100%; padding-bottom: 50px;">
+                <div class="swiper-wrapper" id="county-wrapper"></div>
+                <div class="swiper-pagination" style="bottom: 0;"></div>
+            </div>
+        </section>
+
+        <!-- Section 5: AGM -->
+        <section id="agm" class="gallery-section style1-section" style="background: #050505; color: #fff;">
+            <div class="category-header">
+                <h2>Annual General Meeting</h2>
+                <p>Evaluating progress and transitioning leadership.</p>
+            </div>
+            <div class="swiper agm-swiper" style="width: 100%; padding-bottom: 50px;">
+                <div class="swiper-wrapper" id="agm-wrapper"></div>
+                <div class="swiper-pagination" style="bottom: 0;"></div>
+            </div>
+        </section>
+    </main>
+
+
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <span class="close-lightbox">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+    </div>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="js/gallery-data.js"></script>
+    <script>
+        function buildSwiper(folderKey, containerId, swiperClass) {
+            const data = galleryData[folderKey] || [];
+            if (data.length === 0) return;
+            const wrapper = document.getElementById(containerId);
+
+            data.forEach((imgSrc) => {
+                const safeImgSrc = encodeURI(imgSrc);
+                const slide = document.createElement('div');
+                slide.className = 'swiper-slide style1-slide';
+                slide.onclick = () => openLightbox(imgSrc);
+                // Set as background image for perfect 16:9 aspect ratio coverage mapping Guardian of Galaxy style
+                slide.style.backgroundImage = `url('${safeImgSrc}')`;
+                slide.style.backgroundSize = "cover";
+                slide.style.backgroundPosition = "center";
+                wrapper.appendChild(slide);
+            });
+
+            new Swiper("." + swiperClass, {
+                effect: "coverflow",
+                grabCursor: true,
+                centeredSlides: true,
+                slidesPerView: "auto",
+                loop: data.length > 2,
+                coverflowEffect: {
+                    rotate: 0,
+                    stretch: 150, // Pushes slides horizontally under
+                    depth: 200,   // Scales background image depth
+                    modifier: 1,
+                    slideShadows: true,
+                },
+                initialSlide: Math.floor(data.length / 2) // start centered
+            });
+        }
+
+        buildSwiper('Members', 'members-wrapper', 'members-swiper');
+        buildSwiper('Launching', 'launching-wrapper', 'launching-swiper');
+        buildSwiper('Public Lecture', 'lecture-wrapper', 'lecture-swiper');
+        buildSwiper('County Assembly', 'county-wrapper', 'county-swiper');
+        buildSwiper('AGM', 'agm-wrapper', 'agm-swiper');
+
+        // Batch Download Function
+        async function downloadCollection(filesArray, zipFilename) {
+            if (!filesArray || filesArray.length === 0) {
+                alert("No files to download in this category.");
+                return;
+            }
+
+            const zip = new JSZip();
+            const folder = zip.folder(zipFilename);
+            const btn = event.currentTarget;
+            const originalText = btn.innerHTML;
+
+            btn.innerHTML = `<i class="fas fa-spinner fa-spin"></i> Zipping ${filesArray.length} images...`;
+            btn.style.pointerEvents = 'none';
+
+            let successCount = 0;
+            try {
+                const promises = filesArray.map(async (filePath) => {
+                    const filename = filePath.split('/').pop();
+                    const encodedUrl = encodeURI(filePath);
+                    try {
+                        const resp = await fetch(encodedUrl);
+                        if (!resp.ok) throw new Error(`Failed to load`);
+                        const blob = await resp.blob();
+                        folder.file(filename, blob);
+                        successCount++;
+                    } catch (err) { }
+                });
+
+                await Promise.all(promises);
+
+                const content = await zip.generateAsync({ type: "blob" });
+                saveAs(content, `${zipFilename}.zip`);
+                btn.innerHTML = `<i class="fas fa-check"></i> Done!`;
+                setTimeout(() => btn.innerHTML = originalText, 2000);
+            } catch (err) {
+                btn.innerHTML = `<i class="fas fa-times"></i> Error`;
+                alert(`Download failed.`);
+            } finally {
+                btn.style.pointerEvents = 'auto';
+            }
+        }
+
+        function openLightbox(src) {
+            document.getElementById('lightbox').style.display = "flex";
+            document.getElementById('lightbox-img').src = encodeURI(src);
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = "none";
+        }
+    </script>
+    <script src="js/script.js?v=20"></script>
+</body>
+
+</html>

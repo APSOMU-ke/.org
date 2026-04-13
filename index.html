@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>APSOMU</title>
+  <link rel="stylesheet" href="css/style.css?v=22">
+  <link rel="stylesheet" href="css/nav.css">
+</head>
+
+<body>
+  <header class="index-header">
+    <nav class="main-nav">
+      <div class="logo">
+        <a href="index.html" style="text-decoration:none; display:flex; align-items:center; gap:15px; color:#000;">
+          <img src="Images/logo.webp" alt="APSOMU Logo">
+          <span>APSOMU</span>
+        </a>
+      </div>
+
+      <!-- Desktop Nav -->
+      <ul class="nav-tabs desktop-nav">
+        <li><a href="index.html" class="active">HOME</a></li>
+        <li><a href="about.html">ABOUT</a></li>
+        <li><a href="goals.html">GOALS</a></li>
+        <li><a href="impacts.html">IMPACTS</a></li>
+        <li><a href="events.html">EVENTS</a></li>
+        <li><a href="gallery.html">GALLERY</a></li>
+      </ul>
+      <a href="#" class="partner-btn desktop-nav">Connect with Us</a>
+
+      <!-- Mobile Menu Toggle -->
+      <button class="mobile-menu-toggle" id="mobile-menu-btn">
+        <span class="menu-text">Menu</span>
+        <svg class="hamburger-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+          stroke-width="2">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+        <svg class="close-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+          stroke-width="2" style="display: none;">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </nav>
+
+    <!-- Mobile Dropdown Drawer -->
+    <div class="mobile-drawer" id="mobile-drawer">
+      <ul class="mobile-nav-list">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="goals.html">Goals</a></li>
+        <li><a href="impacts.html">Impacts</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+      </ul>
+      <a href="#" class="mobile-partner-btn">Connect with Us</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-slides">
+      <div class="slide active" style="background-image: url('Images/background (1).webp')"></div>
+      <div class="slide" style="background-image: url('Images/background (2).webp')"></div>
+      <div class="slide" style="background-image: url('Images/background (3).webp')"></div>
+    </div>
+    <div class="hero-content">
+      <h1>APSOMU<br><span class="hero-subtitle">Equality For <span class="highlight">All</span></span></h1>
+      <p>Empowering Political Science students to learn, connect, and lead for a better society.</p>
+      <div class="buttons">
+        <a href="about.html#registration" class="btn-primary">Registration <span class="arrow-right">→</span></a>
+        <a href="about.html#membership" class="btn-outline">Join Us</a>
+      </div>
+      <div class="carousel-indicators">
+        <span class="dot active" onclick="setSlide(0)"></span>
+        <span class="dot" onclick="setSlide(1)"></span>
+        <span class="dot" onclick="setSlide(2)"></span>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="about-section">
+    <div class="about-container">
+      <div class="about-text">
+        <h2>About <span class="highlight-green">APSOMU</span></h2>
+        <p>The Association of Political Science Students of Moi University (APSOMU) is a student-led organization
+          dedicated
+          to empowering Political Science scholars through academic enrichment, professional development, and community
+          engagement.</p>
+        <p>Founded to address the pressing questions and aspirations of students, APSOMU provides a platform where
+          learners
+          can explore the discipline beyond the classroom, connect with practitioners, and prepare for impactful careers
+          in governance, policy, and public service.</p>
+      </div>
+      <div class="about-stats">
+        <div class="stats-grid">
+          <div class="stat-card">
+            <h3>2023</h3>
+            <span>Established</span>
+          </div>
+          <div class="stat-card">
+            <h3>200+</h3>
+            <span>Members</span>
+          </div>
+          <div class="stat-card founder-card">
+            <div class="founder-image-container">
+              <img src="Images/founder.webp" alt="Founder" class="founder-img">
+            </div>
+            <span>Founder</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="stakeholders" class="sdg-section" style="text-align: center;">
+    <div class="stakeholder-header" style="margin-bottom: 3rem;">
+      <h2 style="font-size: 3rem; font-weight: 800;">Stakeholders of our <span
+          class="highlight-green">Association</span></h2>
+    </div>
+    <div class="sdg-container">
+      <div class="sdg-grid stakeholder-grid">
+        <div class="sdg-tile stakeholder-tile active" data-stakeholder="1">
+          <div class="tile-header">
+            <span class="stakeholder-title">1. Students</span>
+            <img src="Images/stakeholder1.webp" alt="Students" class="stakeholder-icon" style="object-fit: cover;">
+            <svg class="dropdown-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </div>
+          <div class="sdg-info-icon"
+            style="width: 35px; height: 35px; bottom: 8px; right: 8px; padding: 4px; border-radius: 8px;">
+            <img src="Images/stakeholdericon1.webp" alt="Stakeholder Icon"
+              style="width: 100%; height: 100%; object-fit: contain;">
+          </div>
+          <div class="mobile-description">
+            <p>Students are the main stakeholders, APSOMU is primarily focused on promoting and advancing study of
+              political science among students.</p>
+          </div>
+        </div>
+        <div class="sdg-tile stakeholder-tile" data-stakeholder="2">
+          <div class="tile-header">
+            <span class="stakeholder-title">2. Scholars</span>
+            <img src="Images/stakeholder2.webp" alt="Scholars" class="stakeholder-icon" style="object-fit: cover;">
+            <svg class="dropdown-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </div>
+          <div class="sdg-info-icon"
+            style="width: 35px; height: 35px; bottom: 8px; right: 8px; padding: 4px; border-radius: 8px;">
+            <img src="Images/stakeholdericon2.webp" alt="Stakeholder Icon"
+              style="width: 100%; height: 100%; object-fit: contain;">
+          </div>
+          <div class="mobile-description">
+            <p>Association provides opportunities for students to engage with different scholars and practitioners
+              therefore this individuas are stakeholders of the organization.</p>
+          </div>
+        </div>
+        <div class="sdg-tile stakeholder-tile" data-stakeholder="3">
+          <div class="tile-header">
+            <span class="stakeholder-title">3. Higher Education</span>
+            <img src="Images/stakeholder3.webp" alt="Higher Education" class="stakeholder-icon"
+              style="object-fit: cover;">
+            <svg class="dropdown-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </div>
+          <div class="sdg-info-icon"
+            style="width: 35px; height: 35px; bottom: 8px; right: 8px; padding: 4px; border-radius: 8px;">
+            <img src="Images/stakeholdericon3.webp" alt="Stakeholder Icon"
+              style="width: 100%; height: 100%; object-fit: contain;">
+          </div>
+          <div class="mobile-description">
+            <p>Association works to promote research and scholarships in the field of political science and to influence
+              policy and contribute to the development of political science as a discipline. Therefore higher
+              institutions are stakeholders.</p>
+          </div>
+        </div>
+        <div class="sdg-tile stakeholder-tile" data-stakeholder="4">
+          <div class="tile-header">
+            <span class="stakeholder-title">4. Government</span>
+            <img src="Images/stakeholder4.webp" alt="Government" class="stakeholder-icon" style="object-fit: cover;">
+            <svg class="dropdown-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </div>
+          <div class="sdg-info-icon"
+            style="width: 35px; height: 35px; bottom: 8px; right: 8px; padding: 4px; border-radius: 8px;">
+            <img src="Images/stakeholdericon4.webp" alt="Stakeholder Icon"
+              style="width: 100%; height: 100%; object-fit: contain;">
+          </div>
+          <div class="mobile-description">
+            <p>Association may work to influence policy and contribute to the development of effective and responsive
+              governance and therefore government and Administrative bodies are stakeholders in the organization.</p>
+          </div>
+        </div>
+        <div class="sdg-tile stakeholder-tile" data-stakeholder="5">
+          <div class="tile-header">
+            <span class="stakeholder-title">5. Other Organizations</span>
+            <img src="Images/stakeholder5.webp" alt="Other Organizations" class="stakeholder-icon"
+              style="object-fit: cover;">
+            <svg class="dropdown-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </div>
+          <div class="sdg-info-icon"
+            style="width: 35px; height: 35px; bottom: 8px; right: 8px; padding: 4px; border-radius: 8px;">
+            <img src="Images/stakeholdericon5.webp" alt="Stakeholder Icon"
+              style="width: 100%; height: 100%; object-fit: contain;">
+          </div>
+          <div class="mobile-description">
+            <p>Association may Foster collaboration and partnerships with other organizations and institutions in the
+              political science community to advance the field and promote it's mission therefore this organization are
+              stakeholders.</p>
+          </div>
+        </div>
+      </div>
+      <div id="sdg-info-card" class="sdg-info-card">
+        <h2 id="sdg-info-title">Students</h2>
+        <p id="sdg-info-description">Students are the main stakeholders, APSOMU is primarily focused on promoting and
+          advancing study of political science among students.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="executives" class="executives-section">
+    <div class="executives-container">
+      <h2>Our <span class="highlight-green">Executives</span></h2>
+      <p class="executives-subtitle">Meet the team driving APSOMU forward.</p>
+      <div class="executives-grid">
+        <div class="executive-card">
+          <img src="Images/Executive1.webp" alt="Samuel Waweru" class="executive-img"
+            onclick="openExecutiveLightbox(this.src)">
+          <h3 class="executive-name">Samuel Waweru</h3>
+          <a href="mailto:wawerumburu021@gmail.com" class="executive-email">wawerumburu021@gmail.com</a>
+        </div>
+        <div class="executive-card">
+          <img src="Images/Executive2.webp" alt="Rotich Syllas" class="executive-img"
+            onclick="openExecutiveLightbox(this.src)">
+          <h3 class="executive-name">Rotich Syllas</h3>
+          <a href="mailto:rotichsyllas@gmail.com" class="executive-email">rotichsyllas@gmail.com</a>
+        </div>
+        <div class="executive-card">
+          <img src="Images/Executive3.webp" alt="Millicent Kaguri" class="executive-img"
+            onclick="openExecutiveLightbox(this.src)">
+          <h3 class="executive-name">Millicent Kaguri</h3>
+          <a href="mailto:millicentkaguri2543@gmail.com" class="executive-email">millicentkaguri2543@gmail.com</a>
+        </div>
+        <div class="executive-card">
+          <img src="Images/Executive4.webp" alt="Betty Kanana" class="executive-img"
+            onclick="openExecutiveLightbox(this.src)">
+          <h3 class="executive-name">Betty Kanana</h3>
+          <a href="mailto:kananabetty36@gmail.com" class="executive-email">kananabetty36@gmail.com</a>
+        </div>
+        <div class="executive-card">
+          <img src="Images/Executive5.webp" alt="Melvine Atieno" class="executive-img"
+            onclick="openExecutiveLightbox(this.src)">
+          <h3 class="executive-name">Melvine Atieno</h3>
+          <a href="mailto:melvineatieno09@gmail.com" class="executive-email">melvineatieno09@gmail.com</a>
+        </div>
+        <div class="executive-card">
+          <img src="Images/Executive6.webp" alt="Lyn Kinya" class="executive-img"
+            onclick="openExecutiveLightbox(this.src)">
+          <h3 class="executive-name">Lyn Kinya</h3>
+          <a href="mailto:lynkinya26@gmail.com" class="executive-email">lynkinya26@gmail.com</a>
+        </div>
+        <div class="executive-card">
+          <img src="Images/Executive7.webp" alt="Caroline Jerono" class="executive-img"
+            onclick="openExecutiveLightbox(this.src)">
+          <h3 class="executive-name">Caroline Jerono</h3>
+          <a href="mailto:jeronocaroline18@gmail.com" class="executive-email">jeronocaroline18@gmail.com</a>
+        </div>
+        <div class="executive-card">
+          <img src="Images/Executive8.webp" alt="Ian Cymi" class="executive-img"
+            onclick="openExecutiveLightbox(this.src)">
+          <h3 class="executive-name">Ian Cymi</h3>
+          <a href="mailto:eaiancymi@gmail.com" class="executive-email">eaiancymi@gmail.com</a>
+        </div>
+        <div class="executive-card">
+          <img src="Images/Executive9.webp" alt="Executive 9" class="executive-img"
+            onclick="openExecutiveLightbox(this.src)">
+          <h3 class="executive-name">Job Kitavi</h3>
+          <a href="mailto:jobkitavi64@gmail.com" class="executive-email">jobkitavi64@gmail.com</a>
+        </div>
+        <div class="executive-card">
+          <img src="Images/Executive10.webp" alt="Executive 10" class="executive-img"
+            onclick="openExecutiveLightbox(this.src)">
+          <h3 class="executive-name">Executive Name 10</h3>
+          <a href="mailto:exec10@example.com" class="executive-email">exec10@example.com</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- National Arena Section -->
+  <section id="national-arena" class="national-arena-section">
+    <div class="national-arena-container">
+      <!-- Sticky Title Left side -->
+      <div class="na-left">
+        <div class="na-sticky-title">
+          <h2>How <span class="highlight-green">APSOMU</span> is represented in national arena</h2>
+        </div>
+      </div>
+      <!-- Scrolling List Right side -->
+      <div class="na-right">
+
+        <!-- Item 1 -->
+        <div class="na-item">
+          <!-- Background image container to apply blur independently without blurring text -->
+          <div class="na-bg" style="background-image: url('Images/Launching\\ (1).webp')"></div>
+          <div class="na-bg-overlay"></div>
+          <div class="na-content">
+            <h3>1. Representation through Student Leadership Structures</h3>
+            <p>APSOMU can channel its voice through the Moi University Students Organisation, which officially
+              represents students at institutional and sometimes national levels.</p>
+            <p>Through MUSO, student issues can reach university Senate and national education stakeholders.</p>
+            <p>This gives APSOMU indirect influence on national student policies.</p>
+          </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="na-item">
+          <div class="na-bg" style="background-image: url('Images/Launching\\ (2).webp')"></div>
+          <div class="na-bg-overlay"></div>
+          <div class="na-content">
+            <h3>2. Participation in National Conferences & Forums</h3>
+            <p>Members can attend:</p>
+            <ul>
+              <li>Political science conventions</li>
+              <li>Youth leadership forums</li>
+              <li>Kenya Model United Nations (KMUN, etc.)</li>
+            </ul>
+            <p>Such platforms expose APSOMU to national dialogue, policy debates and networking with other universities.
+            </p>
+          </div>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="na-item">
+          <div class="na-bg" style="background-image: url('Images/Launching\\ (3).webp')"></div>
+          <div class="na-bg-overlay"></div>
+          <div class="na-content">
+            <h3>3. Collaboration with Other Universities' Associations</h3>
+            <p>APSOMU can partner with similar associations in institutions like University of Nairobi Students
+              Association.</p>
+            <p>Inter-university collaboration helps:</p>
+            <ul>
+              <li>Share ideas</li>
+              <li>Build a unified student voice nationally</li>
+              <li>Organize joint academic or advocacy events</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="na-item">
+          <div class="na-bg" style="background-image: url('Images/Launching\\ (5).webp')"></div>
+          <div class="na-bg-overlay"></div>
+          <div class="na-content">
+            <h3>4. Engagement in National Policy and Civic Activities</h3>
+            <p>As a political science body, APSOMU can:</p>
+            <ul>
+              <li>Participate in public participation forums</li>
+              <li>Engage county assemblies and national government discussions</li>
+              <li>Advocate on governance, democracy, and youth inclusion</li>
+            </ul>
+            <p>This strengthens its identity as a policy-influencing student body.</p>
+          </div>
+        </div>
+
+        <!-- Item 5 -->
+        <div class="na-item">
+          <div class="na-bg" style="background-image: url('Images/Launching\\ (6).webp')"></div>
+          <div class="na-bg-overlay"></div>
+          <div class="na-content">
+            <h3>5. Media and Public Intellectual Presence</h3>
+            <p>APSOMU can gain national visibility by:</p>
+            <ul>
+              <li>Writing articles, blogs, or policy briefs</li>
+              <li>Engaging media discussions on political issues</li>
+            </ul>
+            <p>This positions the association as a thought leader among youth.</p>
+          </div>
+        </div>
+
+        <!-- Item 6 -->
+        <div class="na-item">
+          <div class="na-bg" style="background-image: url('Images/Launching\\ (7).webp')"></div>
+          <div class="na-bg-overlay"></div>
+          <div class="na-content">
+            <h3>6. Networking with National Umbrella Student Bodies</h3>
+            <p>Just like organizations such as Association of Muslims in Universities and Colleges in Kenya that unite
+              students nationally, APSOMU can:</p>
+            <ul>
+              <li>Join or initiate national political science student networks</li>
+              <li>Advocate collectively for academic and professional interests</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Item 7 -->
+        <div class="na-item">
+          <div class="na-bg" style="background-image: url('Images/Launching\\ (8).webp')"></div>
+          <div class="na-bg-overlay"></div>
+          <div class="na-content">
+            <h3>7. Alumni and Professional Linkages</h3>
+            <p>APSOMU can leverage alumni from Moi University working in:</p>
+            <ul>
+              <li>Government</li>
+              <li>NGOs</li>
+              <li>International organizations</li>
+            </ul>
+            <p>This builds a national footprint and influence.</p>
+          </div>
+        </div>
+
+        <!-- Item 8 -->
+        <div class="na-item">
+          <div class="na-bg" style="background-image: url('Images/Launching\\ (10).webp')"></div>
+          <div class="na-bg-overlay"></div>
+          <div class="na-content">
+            <h3>8. Hosting National Events</h3>
+            <p>APSOMU can position itself by organizing:</p>
+            <ul>
+              <li>National political science symposiums</li>
+              <li>Public lectures (like inviting national figures such as PLO Lumumba)</li>
+            </ul>
+            <p>This attracts attention from across Kenya and elevates the association's profile.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact-section">
+    <div class="contact-container">
+      <div class="contact-content">
+        <h2 class="contact-title">APSOMU</h2>
+        <p class="contact-text">
+          Empower your voice, expand your mind — join APSOMU and shape the future of Political Science today!.
+          Join APSOMU and be a part of shaping a better future, or contribute through donations to make a difference!
+          To join or for donations or contributions:
+        </p>
+        <p class="contact-subtext">Contact us at</p>
+        <a href="tel:0769054719" class="contact-button">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path
+              d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+            </path>
+          </svg>
+          0769054719
+        </a>
+        <a href="tel:0797799116" class="contact-button">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path
+              d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+            </path>
+          </svg>
+          0797799116
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox Modal -->
+  <div id="executive-lightbox" class="lightbox" onclick="closeExecutiveLightbox(event)">
+    <span class="close-lightbox" onclick="closeExecutiveLightbox(event)">&times;</span>
+    <img class="lightbox-content" id="executive-lightbox-img">
+  </div>
+
+  <script src="js/script.js?v=12"></script>
+</body>
+
+</html>

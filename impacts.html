@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impacts - APSOMU</title>
+    <link rel="stylesheet" href="css/impacts.css?v=3">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;600;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/nav.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="impacts-nav">
+        <a href="index.html" class="logo">APSOMU</a>
+        <ul class="desktop-nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="goals.html">Goals</a></li>
+            <li><a href="impacts.html" class="active">Impacts</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+        </ul>
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-menu-toggle" id="mobile-menu-btn">
+          <span class="menu-text">Menu</span>
+          <svg class="hamburger-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+          <svg class="close-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: none;">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+        <div class="mobile-drawer" id="mobile-drawer">
+          <ul class="mobile-nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="goals.html">Goals</a></li>
+            <li><a href="impacts.html" class="active">Impacts</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+          </ul>
+          <a href="#" class="mobile-partner-btn">Connect with Us</a>
+        </div>
+    </nav>
+
+    <!-- Main Scroll Container -->
+    <div class="impacts-container">
+
+        <!-- Section 1: Individual Levels (Left Aligned) -->
+        <section class="impact-section left">
+            <img src="Images/impact (1).webp" alt="Student Interaction" class="impact-bg">
+            <div class="impact-overlay">
+                <div class="impact-line anim-fade-right delay-200"></div>
+                <h1 class="impact-title anim-fade-up delay-300">a) Individual<br>Levels</h1>
+
+                <ul class="impact-list">
+                    <li class="anim-fade-up delay-400">1. Providing opportunities to engage with scholars and
+                        practitioners.</li>
+                    <li class="anim-fade-up delay-500">2. Developing the art of public speaking through organizing debate
+                        forums.</li>
+                    <li class="anim-fade-up delay-600">3. Exposure to networking opportunities.</li>
+                </ul>
+            </div>
+            <div class="scroll-indicator">
+                <i class="fas fa-chevron-down"></i> SCROLL
+            </div>
+        </section>
+
+        <!-- Section 2: Institutional Levels (Right Aligned) -->
+        <section class="impact-section right">
+            <img src="Images/impact (2).webp" alt="Institutional Collaboration" class="impact-bg">
+            <div class="impact-overlay">
+                <div class="impact-line anim-fade-left delay-200"></div>
+                <h1 class="impact-title anim-fade-left delay-300">b) Institutional<br>Levels</h1>
+
+                <ul class="impact-list">
+                    <li class="anim-fade-left delay-400">1. Promotion of research and scholarships among its members to
+                        influence policy and contribute to the advancement of political science as a field of study.
+                    </li>
+                    <li class="anim-fade-left delay-500">2. Fostering Collaboration and partnership with other
+                        organizations and institutions in the political science community.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Section 3: National Arena (Left Aligned) -->
+        <section class="impact-section left">
+            <img src="Images/impact (3).webp" alt="National Governance" class="impact-bg">
+            <div class="impact-overlay">
+                <div class="impact-line anim-fade-right delay-200"></div>
+                <h1 class="impact-title anim-fade-up delay-300">c) National<br>Arena</h1>
+
+                <p class="impact-list" style="margin-left: 0; padding-left: 0;">
+                    <span class="anim-fade-up delay-400" style="display:block; font-size:1.2rem; line-height:1.6">
+                        Influence of policy and contribution to the development of effective and responsive governance
+                        by promoting research and scholarships in the field of political science.
+                    </span>
+                </p>
+            </div>
+        </section>
+
+    </div>
+
+    <script>
+        // Intersection Observer for Scroll Animations
+        const observerOptions = {
+            root: document.querySelector('.impacts-container'),
+            threshold: 0.4
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('display-active');
+                } else {
+                    entry.target.classList.remove('display-active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.impact-section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+    <script src="js/script.js?v=20"></script>
+</body>
+
+</html>

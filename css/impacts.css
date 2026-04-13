@@ -1,0 +1,381 @@
+:root {
+    /* Brand Gradient: Dark Blue, Blue, Purple, Gold */
+    --impact-gradient: linear-gradient(135deg, #00008B, #0000FF, #800080, #FFD700);
+    --primary-blue: #00008B;
+    --accent-gold: #FFD700;
+    --text-color: #e0e0e0;
+    --bg-color: #050505;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Times New Roman', Times, serif;
+    overflow-x: clip;
+}
+
+/* --- Navigation (Reusing style from Events/Goals structure) --- */
+.impacts-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9) 0%, transparent 100%);
+    transition: 0.3s;
+}
+
+.impacts-nav .logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #fff;
+    text-decoration: none;
+    letter-spacing: 1px;
+    display: flex;
+    flex-direction: column;
+}
+
+.impacts-nav .logo span {
+    font-size: 0.6rem;
+    font-weight: 400;
+    opacity: 0.8;
+}
+
+.impacts-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 15px;
+}
+
+.impacts-nav ul li a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.3s;
+    font-weight: 600;
+}
+
+.impacts-nav ul li a:hover,
+.impacts-nav ul li a.active {
+    color: #00ff15;
+}
+
+/* --- Main Layout --- */
+.impacts-container {
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+}
+
+.impact-section {
+    height: 100vh;
+    width: 100%;
+    scroll-snap-align: start;
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Background Image */
+.impact-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    filter: brightness(0.7) contrast(1.1);
+    /* Darker for text readability */
+    transition: transform 10s ease;
+}
+
+.impact-section:hover .impact-bg {
+    transform: scale(1.05);
+    /* Slow zoom effect */
+}
+
+/* Content Overlay */
+.impact-overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 5%;
+    z-index: 1;
+}
+
+/* Left Alignment Variant */
+.impact-section.left .impact-overlay {
+    left: 0;
+    background: linear-gradient(to right, #000000 0%, rgba(0, 0, 0, 0.85) 60%, transparent 100%);
+    align-items: flex-start;
+    text-align: left;
+}
+
+/* Right Alignment Variant */
+.impact-section.right {
+    justify-content: flex-end;
+}
+
+.impact-section.right .impact-overlay {
+    right: 0;
+    background: linear-gradient(to left, #000000 0%, rgba(0, 0, 0, 0.85) 60%, transparent 100%);
+    align-items: flex-end;
+    text-align: right;
+}
+
+/* Typography */
+.impact-level {
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    padding: 5px 15px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.05);
+    color: #FFD700;
+    /* Gold for the label */
+    opacity: 0;
+}
+
+.impact-title {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    font-family: 'Playfair Display', serif;
+    /* Gradient Text Title */
+    background: linear-gradient(to right, #fff, #e0e0e0);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    opacity: 0;
+}
+
+.impact-list {
+    list-style: none;
+    margin-bottom: 2rem;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.impact-list li {
+    font-size: 1.3rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 1.2rem;
+    position: relative;
+    padding-left: 20px;
+}
+
+/* Custom Bullet Points using CSS shapes */
+.impact-section.left .impact-list li::before {
+    display: none;
+}
+
+.impact-section.right .impact-list li {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.impact-section.right .impact-list li::before {
+    display: none;
+}
+
+/* Decorative Line */
+.impact-line {
+    width: 100px;
+    height: 4px;
+    background: var(--impact-gradient);
+    border-radius: 2px;
+    margin-bottom: 2rem;
+    opacity: 0;
+}
+
+/* Scroll Indication */
+.scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.8rem;
+    animation: bounce 2s infinite;
+    z-index: 10;
+}
+
+@media (max-width: 768px) {
+    .impacts-nav ul li a {
+        color: rgb(0, 0, 0);
+    }
+
+    .impacts-nav ul li a:hover,
+    .impacts-nav ul li a.active {
+        color: #0011ff;
+    }
+
+    .impact-level {
+        font-size: 0.85rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .impact-title {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .impact-list li {
+        font-size: 0.95rem;
+        line-height: 1.4;
+        margin-bottom: 0.8rem;
+    }
+
+    .impact-overlay {
+        width: 100%;
+        background: linear-gradient(to top, #000000 0%, rgba(0, 0, 0, 0.9) 100%, transparent 100%) !important;
+        align-items: center !important;
+        text-align: center !important;
+        justify-content: center;
+        padding-top: 80px;
+        padding-bottom: 30px;
+    }
+
+    .impact-section.right .impact-overlay {
+        align-items: center !important;
+    }
+
+    .impact-list li {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        margin-bottom: 1rem;
+    }
+
+    .impact-list li::before {
+        display: none;
+        /* Hide custom bullets on mobile for centered text */
+    }
+}
+
+/* --- ANIMATIONS --- */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeLeft {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeRight {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes bounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateX(-50%) translateY(0);
+    }
+
+    40% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+
+    60% {
+        transform: translateX(-50%) translateY(-5px);
+    }
+}
+
+/* Utility Classes for JS */
+.display-active .anim-fade-up {
+    animation: fadeUp 0.8s ease-out forwards;
+}
+
+.display-active .anim-fade-down {
+    animation: fadeDown 0.8s ease-out forwards;
+}
+
+.display-active .anim-fade-left {
+    animation: fadeLeft 0.8s ease-out forwards;
+}
+
+.display-active .anim-fade-right {
+    animation: fadeRight 0.8s ease-out forwards;
+}
+
+.delay-100 {
+    animation-delay: 0.1s;
+}
+
+.delay-200 {
+    animation-delay: 0.2s;
+}
+
+.delay-300 {
+    animation-delay: 0.3s;
+}
+
+.delay-400 {
+    animation-delay: 0.4s;
+}
+
+.delay-500 {
+    animation-delay: 0.5s;
+}

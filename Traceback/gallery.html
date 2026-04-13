@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - APSOMU</title>
+    <!-- Inter Font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Swiper.js CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- JSZip -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="gallery.css">
+</head>
+
+<body>
+    <header class="header-scrolled gallery-nav">
+        <nav>
+            <div class="logo">
+                <img src="logo.png" alt="APSOMU Logo" style="height: 40px; width: auto;">
+                <span>Equality for All</span>
+            </div>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="goals.html">Goals</a></li>
+                    <li><a href="gallery.html" class="active">Gallery</a></li>
+                    <li><a href="events.html">Events</a></li>
+                </ul>
+                <a href="index.html#contact" class="partner-btn">Connect</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Section 1: Style 1 (Curved) -->
+        <section class="gallery-section style1-section" style="background: #111; color: #fff;">
+            <div class="category-header">
+                <h2>Tour Categories</h2>
+                <p>Wonderful Place For You</p>
+                <button class="download-btn"
+                    onclick="downloadCollection('Launching', 15, 'Tour_Categories_Collection')">
+                    <i class="fas fa-download"></i> Download Selection
+                </button>
+            </div>
+
+            <div class="swiper style1-swiper">
+                <div class="swiper-wrapper" id="style1-wrapper">
+                    <!-- Dynamic Slides -->
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
+
+        <!-- Section 2: Style 2 (Expanding) -->
+        <section class="gallery-section style2-section">
+            <div class="category-header">
+                <h2>Departmental Highlights</h2>
+                <p>Growth and Excellence in every step.</p>
+                <button class="download-btn"
+                    onclick="downloadCollection('APSOMU Members', APSOMU_COUNT, 'APSOMU_Members_Collection')">
+                    <i class="fas fa-download"></i> Download All Names
+                </button>
+            </div>
+            <div class="options" id="style2-options">
+                <!-- Dynamic Options -->
+            </div>
+        </section>
+
+        <!-- Section 3: Style 3 (Fullscreen Story) -->
+        <section class="gallery-section style3-section">
+            <div class="main-slider swiper swiper3">
+                <div class="swiper-wrapper" id="swiper3-main-wrapper">
+                    <!-- Dynamic Slides -->
+                </div>
+            </div>
+            <div class="style3-content">
+                <h1 id="style3-title">Scholarly Excellence</h1>
+                <p id="style3-desc">Advancing political science through dedicated student research.</p>
+            </div>
+            <div class="style3-controls">
+                <div class="style3-btn s3-prev"><i class="fas fa-arrow-left"></i></div>
+                <div class="style3-btn s3-next"><i class="fas fa-arrow-right"></i></div>
+                <button class="download-btn"
+                    onclick="downloadCollection('Launching', LAUNCHING_COUNT, 'Launching_Ceremony_Collection')"
+                    style="width: auto; height: 50px; border-radius: 25px; padding: 0 25px; margin-top: 0;">
+                    <i class="fas fa-download"></i>
+                </button>
+            </div>
+            <div class="thumb-container">
+                <div class="thumb-slider swiper swiper3-thumbs">
+                    <div class="swiper-wrapper" id="swiper3-thumb-wrapper">
+                        <!-- Dynamic Thumbs -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    </main>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <span class="close-lightbox">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+    </div>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        // Configuration
+        const APSOMU_COUNT = 49;
+        const LAUNCHING_COUNT = 85;
+
+
+        const style1Wrapper = document.getElementById('style1-wrapper');
+        for (let i = 1; i <= 15; i++) {
+            const slide = document.createElement('div');
+            slide.className = 'swiper-slide style1-slide';
+            const imgSrc = `Launching (${i}).jpg`;
+            slide.onclick = () => openLightbox(imgSrc);
+            slide.innerHTML = `<img src="${imgSrc}" alt="Gallery Image ${i}">`;
+            style1Wrapper.appendChild(slide);
+        }
+
+        new Swiper(".style1-swiper", {
+            effect: "coverflow",
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: "auto",
+            coverflowEffect: {
+                rotate: 50,
+                stretch: 0,
+                depth: 100,
+                modifier: 1,
+                slideShadows: true,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+            },
+            initialSlide: 2
+        });
+
+        // Generate Style 2: Expanding (All 49 APSOMU Members)
+        const style2Options = document.getElementById('style2-options');
+        for (let i = 1; i <= APSOMU_COUNT; i++) {
+            const option = document.createElement('div');
+            option.className = `option ${i === 1 ? 'active' : ''}`;
+            option.style.backgroundImage = `url('APSOMU Members (${i}).jpg')`;
+            option.innerHTML = `<div class="shadow"></div>`;
+            style2Options.appendChild(option);
+            option.addEventListener("click", () => {
+                if (option.classList.contains("active")) {
+                    const imgSrc = option.style.backgroundImage.slice(5, -2); // Extract URL from url('...')
+                    openLightbox(imgSrc);
+                } else {
+                    document.querySelectorAll(".option").forEach(o => o.classList.remove("active"));
+                    option.classList.add("active");
+                    // Scroll into view when clicked
+                    option.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+                }
+            });
+        }
+
+        // Generate Style 3: Fullscreen (Launching 1-85)
+        const swiper3Main = document.getElementById('swiper3-main-wrapper');
+        const swiper3Thumb = document.getElementById('swiper3-thumb-wrapper');
+        for (let i = 1; i <= LAUNCHING_COUNT; i++) {
+            // Main Slide
+            const slide = document.createElement('div');
+            slide.className = 'swiper-slide';
+            slide.style.backgroundImage = `url('Launching (${i}).jpg')`;
+            swiper3Main.appendChild(slide);
+
+            // Thumb Slide
+            const thumb = document.createElement('div');
+            thumb.className = 'swiper-slide';
+            thumb.style.backgroundImage = `url('Launching (${i}).jpg')`;
+            swiper3Thumb.appendChild(thumb);
+        }
+
+
+
+        const s3Thumbs = new Swiper(".swiper3-thumbs", { spaceBetween: 15, slidesPerView: 3, freeMode: true, watchSlidesProgress: true });
+        new Swiper(".swiper3", {
+            effect: "fade", loop: true, thumbs: { swiper: s3Thumbs },
+            navigation: { nextEl: ".s3-next", prevEl: ".s3-prev" },
+            on: {
+                slideChange: function () {
+                    const idx = this.realIndex;
+                    document.getElementById('style3-title').textContent = "Launching Ceremony";
+                    document.getElementById('style3-desc').textContent = `Moment ${idx + 1} of APSOMU's grand launch event.`;
+                }
+            }
+        });
+
+
+        // Batch Download Function
+        async function downloadCollection(prefix, count, zipFilename) {
+            const zip = new JSZip();
+            const folder = zip.folder(zipFilename);
+            const btn = event.currentTarget;
+            const originalText = btn.innerHTML;
+
+            // Loading State
+            btn.innerHTML = `<i class="fas fa-spinner fa-spin"></i> Zipping ${count} images...`;
+            btn.style.pointerEvents = 'none';
+
+            let successCount = 0;
+
+            try {
+                const promises = [];
+                for (let i = 1; i <= count; i++) {
+                    const filename = `${prefix} (${i}).jpg`;
+                    // Use encodeURI to handle spaces and special chars in filenames
+                    const url = encodeURI(filename);
+
+                    const promise = fetch(url)
+                        .then(resp => {
+                            if (!resp.ok) throw new Error(`Failed to load ${filename}`);
+                            return resp.blob();
+                        })
+                        .then(blob => {
+                            folder.file(filename, blob);
+                            successCount++;
+                        })
+                        .catch(err => {
+                            console.warn(`Error fetching ${filename}:`, err);
+                            return null; // Resolve to null to let Promise.all finish
+                        });
+                    promises.push(promise);
+                }
+
+                await Promise.all(promises);
+
+                if (successCount === 0) {
+                    throw new Error("No images could be loaded. Likely a CORS/File protocol issue.");
+                }
+
+                const content = await zip.generateAsync({ type: "blob" });
+                saveAs(content, `${zipFilename}.zip`);
+
+                // Success State
+                btn.innerHTML = `<i class="fas fa-check"></i> Done!`;
+                setTimeout(() => btn.innerHTML = originalText, 2000);
+            } catch (err) {
+                console.error(err);
+                btn.innerHTML = `<i class="fas fa-times"></i> Error`;
+                alert(`Download failed: ${err.message}\n\nIMPORTANT: If you are opening the HTML file directly (file://), this feature is blocked by browser security. It will work when hosted on GitHub or a local server.`);
+            } finally {
+                btn.style.pointerEvents = 'auto';
+            }
+        }
+
+        // Lightbox Functions
+        function openLightbox(src) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            lightbox.style.display = "flex";
+            lightboxImg.src = src;
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = "none";
+        }
+    </script>
+</body>
+
+</html>

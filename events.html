@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events - APSOMU</title>
+    <!-- Fonts (Removed Google Fonts as Times New Roman is standard web-safe) -->
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/events.css">
+    <link rel="stylesheet" href="css/nav.css">
+</head>
+
+<body style="font-family: 'Times New Roman', Times, serif;">
+
+    <!-- Navigation -->
+    <nav class="events-nav">
+        <a href="index.html" class="logo">APSOMU</a>
+        <ul class="desktop-nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="goals.html">Goals</a></li>
+            <li><a href="impacts.html">Impacts</a></li>
+            <li><a href="events.html" class="active">Events</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+        </ul>
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-menu-toggle" id="mobile-menu-btn">
+          <span class="menu-text">Menu</span>
+          <svg class="hamburger-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+          <svg class="close-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: none;">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+        <div class="mobile-drawer" id="mobile-drawer">
+          <ul class="mobile-nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="goals.html">Goals</a></li>
+            <li><a href="impacts.html">Impacts</a></li>
+            <li><a href="events.html" class="active">Events</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+          </ul>
+          <a href="#" class="mobile-partner-btn">Connect with Us</a>
+        </div>
+    </nav>
+
+    <!-- Main Scroll Container -->
+    <div class="events-container">
+
+        <!-- Section 1: Launching Ceremony -->
+        <section class="event-section left">
+            <img src="Images/LaunchingBacjground.webp" alt="Launching of the Association" class="event-bg">
+            <div class="event-overlay">
+                <span class="event-year anim-fade-down delay-100">Feb 2025</span>
+                <h1 class="event-title anim-fade-up delay-200">Association<br>Launch</h1>
+                <p class="event-desc anim-fade-up delay-300">
+                    The official launch of the Association of Political Science of Moi University marked the beginning of a structured platform for students interested in governance and public affairs. It brought together like-minded individuals, introduced the association's vision and objectives, and created a sense of identity and belonging among members.
+                </p>
+                <p class="event-desc anim-fade-up delay-300" style="margin-top: 15px; font-style: italic;">
+                    <strong>Impact:</strong> This event laid a strong foundation for the association by boosting membership, enhancing visibility within the university and setting the pace for future academic and leadership activities.
+                </p>
+                <a href="gallery.html#launching" class="event-btn anim-fade-up delay-400">See Gallery</a>
+            </div>
+            <div class="scroll-indicator">
+                <i class="fas fa-chevron-down"></i> SCROLL
+            </div>
+        </section>
+
+        <!-- Section 2: Public Lecture -->
+        <section class="event-section right">
+            <img src="Images/PublicLectureBackground.jpg" alt="Public Lecture" class="event-bg">
+            <div class="event-overlay">
+                <span class="event-year anim-fade-right delay-100">Lecture</span>
+                <h1 class="event-title anim-fade-right delay-200">Prof. PLO Lumumba<br>Public Lecture</h1>
+                <p class="event-desc anim-fade-right delay-300">
+                    Members attended a powerful and thought-provoking lecture by Prof. PLO Lumumba, focusing on leadership, governance, and Africa's development. His message challenged students to think critically and embrace ethical leadership.
+                </p>
+                <p class="event-desc anim-fade-right delay-300" style="margin-top: 15px; font-style: italic;">
+                    <strong>Impact:</strong> The lecture significantly influenced members' perspectives on leadership and governance, inspired intellectual engagement and strengthened the association's academic relevance by exposing members to real world insights from a renowned scholar.
+                </p>
+                <a href="gallery.html#lecture" class="event-btn anim-fade-right delay-400">See Gallery</a>
+            </div>
+        </section>
+
+        <!-- Section 3: County Assembly -->
+        <section class="event-section left">
+            <img src="Images/CountyAssemblyBackground.webp" alt="Visit to the County Assembly" class="event-bg">
+            <div class="event-overlay">
+                <span class="event-year anim-fade-left delay-100">Visit</span>
+                <h1 class="event-title anim-zoom-in delay-200">County Assembly<br>Visit</h1>
+                <p class="event-desc anim-fade-left delay-300">
+                    The association organized a visit to the County Assembly, where members observed legislative proceedings and engaged with leaders on governance issues. This provided a practical learning experience beyond the classroom.
+                </p>
+                <p class="event-desc anim-fade-left delay-300" style="margin-top: 15px; font-style: italic;">
+                    <strong>Impact:</strong> The visit bridged the gap between theory and practice, enhanced members' understanding of devolution and legislative processes and motivated students to actively participate in governance and public service.
+                </p>
+                <a href="gallery.html#county-visit" class="event-btn anim-fade-left delay-400">See Gallery</a>
+            </div>
+        </section>
+
+        <!-- Section 4: AGM -->
+        <section class="event-section right">
+            <img src="Images/AGMBackground.jpeg" alt="AGM and Transition of Leadership" class="event-bg">
+            <div class="event-overlay">
+                <span class="event-year anim-fade-right delay-100">Mar 2026</span>
+                <h1 class="event-title anim-fade-right delay-200">AGM & Transition<br>of Leadership</h1>
+                <p class="event-desc anim-fade-right delay-300">
+                    The Annual General Meeting (AGM) provided a platform to evaluate the association's progress, address challenges, and set future goals. It also facilitated a smooth handover to new leadership. Notably, constitutional expert Nganga Muigai was present and offered in depth insights, helping to elaborate and clarify key aspects of the association's constitution, which was essential for strengthening its governance framework.
+                </p>
+                <p class="event-desc anim-fade-right delay-300" style="margin-top: 15px; font-style: italic;">
+                    <strong>Impact:</strong> This event strengthened accountability and transparency within the association, ensured continuity of leadership and introduced fresh ideas and energy, which are essential for sustained growth and development.
+                </p>
+                <a href="gallery.html#agm" class="event-btn anim-fade-right delay-400">See Gallery</a>
+            </div>
+        </section>
+
+    </div>
+
+    <script>
+        // Intersection Observer for Scroll Animations
+        const observerOptions = {
+            root: document.querySelector('.events-container'),
+            threshold: 0.5 // Trigger when 50% of section is visible
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('display-active');
+                } else {
+                    // Optional: remove class to replay animation when scrolling back
+                    entry.target.classList.remove('display-active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.event-section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+    <script src="js/script.js?v=20"></script>
+</body>
+
+</html>
