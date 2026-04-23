@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://apsomu.org/sitemap.xml

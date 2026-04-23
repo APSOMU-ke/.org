@@ -1,7 +1,7 @@
 import os
 import json
 
-base_dir = r"c:\Users\victor\3D Objects\APSOMU"
+base_dir = r"c:\Users\alvae\Documents\New Folder\APSOMU"
 images_dir = os.path.join(base_dir, "Images")
 js_output = os.path.join(base_dir, "js", "gallery-data.js")
 
