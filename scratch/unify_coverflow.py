@@ -1,79 +1,65 @@
-<!DOCTYPE html>
-<html lang="en">
+import codecs
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gallery - APSOMU</title>
-    <!-- Inter Font -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <!-- Swiper.js CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <!-- JSZip -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/gallery.css">
-    <link rel="stylesheet" href="css/nav.css">
-</head>
+# 1. Update CSS
+css_path = r"c:\Users\victor\3D Objects\APSOMU\css\gallery.css"
+with codecs.open(css_path, "r", "utf-8") as f:
+    css_content = f.read()
 
-<body>
-    <header class="gallery-nav">
-        <nav>
-            <div class="logo">
-                <span style="color: #000; font-weight: bold;">APSOMU</span>
-            </div>
+# Replace .style1-slide definition
+old_slide = """
+.style1-slide {
+    width: 500px;
+    height: 350px;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5);
+    background: #000;
+}
+"""
 
-            <ul class="nav-tabs desktop-nav">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="goals.html">Goals</a></li>
-                <li><a href="impacts.html">Impacts</a></li>
-                <li><a href="gallery.html" class="active">Gallery</a></li>
-                <li><a href="events.html">Events</a></li>
-            </ul>
-            <a href="index.html#contact" class="partner-btn desktop-nav">Connect</a>
+new_slide = """
+.style1-slide {
+    width: 60vw;
+    max-width: 800px;
+    aspect-ratio: 16/9;
+    height: auto;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5);
+    background: #000;
+}
+"""
 
-            <!-- Mobile Menu Toggle -->
-            <button class="mobile-menu-toggle" id="mobile-menu-btn">
-                <span class="menu-text">Menu</span>
-                <svg class="hamburger-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                    stroke-width="2">
-                    <line x1="3" y1="12" x2="21" y2="12"></line>
-                    <line x1="3" y1="6" x2="21" y2="6"></line>
-                    <line x1="3" y1="18" x2="21" y2="18"></line>
-                </svg>
-                <svg class="close-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                    stroke-width="2" style="display: none;">
-                    <line x1="18" y1="6" x2="6" y2="18"></line>
-                    <line x1="6" y1="6" x2="18" y2="18"></line>
-                </svg>
-            </button>
-        </nav>
+if old_slide.strip() in css_content:
+    css_content = css_content.replace(old_slide.strip(), new_slide.strip())
 
-        <!-- Mobile Dropdown Drawer -->
-        <div class="mobile-drawer" id="mobile-drawer">
-            <ul class="mobile-nav-list">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="goals.html">Goals</a></li>
-                <li><a href="impacts.html">Impacts</a></li>
-                <li><a href="events.html">Events</a></li>
-                <li><a href="gallery.html" class="active">Gallery</a></li>
-            </ul>
-          <a href="https://wa.me/254769054719?text=I%20am%20interested%20in%20the%20APSOMU%20mission" target="_blank" class="mobile-partner-btn">Connect with Us</a>
-        </div>
-    </header>
+# Strip out style2 and style3
+style2_idx = css_content.find("/* --- STYLE 2: EXPANDING CARDS --- */")
+if style2_idx != -1:
+    dl_btn_idx = css_content.find("/* Download Button Style */")
+    if dl_btn_idx != -1:
+        css_content = css_content[:style2_idx] + css_content[dl_btn_idx:]
 
+with codecs.open(css_path, "w", "utf-8") as f:
+    f.write(css_content)
 
+# 2. Update HTML
+html_path = r"c:\Users\victor\3D Objects\APSOMU\gallery.html"
+with codecs.open(html_path, "r", "utf-8") as f:
+    html_content = f.read()
 
+new_main = """
     <main>
         <!-- Section 1: Members -->
         <section id="members" class="gallery-section style1-section" style="background: #050505; color: #fff;">
             <div class="category-header">
                 <h2>Our Members</h2>
                 <p>The Heart of APSOMU</p>
+                <button class="download-btn" onclick="downloadCollection(galleryData['Members'], 'APSOMU_Members')">
+                    <i class="fas fa-download"></i> Download Selection
+                </button>
             </div>
             <div class="swiper members-swiper" style="width: 100%; padding-bottom: 50px;">
                 <div class="swiper-wrapper" id="members-wrapper"></div>
@@ -86,6 +72,9 @@
             <div class="category-header">
                 <h2>Association Launch</h2>
                 <p>Witness the beginning of a structured platform for students.</p>
+                <button class="download-btn" onclick="downloadCollection(galleryData['Launching'], 'APSOMU_Launch')">
+                    <i class="fas fa-download"></i> Download Selection
+                </button>
             </div>
             <div class="swiper launching-swiper" style="width: 100%; padding-bottom: 50px;">
                 <div class="swiper-wrapper" id="launching-wrapper"></div>
@@ -98,6 +87,9 @@
             <div class="category-header">
                 <h2>Prof. PLO Lumumba Public Lecture</h2>
                 <p>Ethical Leadership & Governance Insights</p>
+                <button class="download-btn" onclick="downloadCollection(galleryData['Public Lecture'], 'Public_Lecture')">
+                    <i class="fas fa-download"></i> Download Selection
+                </button>
             </div>
             <div class="swiper lecture-swiper" style="width: 100%; padding-bottom: 50px;">
                 <div class="swiper-wrapper" id="lecture-wrapper"></div>
@@ -110,6 +102,9 @@
             <div class="category-header">
                 <h2>County Assembly Visit</h2>
                 <p>Bridging Theory and Practice</p>
+                <button class="download-btn" onclick="downloadCollection(galleryData['County Assembly'], 'County_Assembly')">
+                    <i class="fas fa-download"></i> Download Selection
+                </button>
             </div>
             <div class="swiper county-swiper" style="width: 100%; padding-bottom: 50px;">
                 <div class="swiper-wrapper" id="county-wrapper"></div>
@@ -122,6 +117,9 @@
             <div class="category-header">
                 <h2>Annual General Meeting</h2>
                 <p>Evaluating progress and transitioning leadership.</p>
+                <button class="download-btn" onclick="downloadCollection(galleryData['AGM'], 'APSOMU_AGM')">
+                    <i class="fas fa-download"></i> Download Selection
+                </button>
             </div>
             <div class="swiper agm-swiper" style="width: 100%; padding-bottom: 50px;">
                 <div class="swiper-wrapper" id="agm-wrapper"></div>
@@ -129,60 +127,28 @@
             </div>
         </section>
     </main>
+"""
 
+main_start = html_content.find("<main>")
+main_end = html_content.find("</main>") + 7
+html_content = html_content[:main_start] + new_main + html_content[main_end:]
 
-
-    <!-- Lightbox Modal -->
-    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
-        <span class="close-lightbox">&times;</span>
-        <img class="lightbox-content" id="lightbox-img">
-    </div>
-
-    <!-- Swiper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="js/gallery-data.js"></script>
+new_script = """<script src="js/gallery-data.js"></script>
     <script>
         function buildSwiper(folderKey, containerId, swiperClass) {
             const data = galleryData[folderKey] || [];
             if (data.length === 0) return;
             const wrapper = document.getElementById(containerId);
-
-            // Add navigation buttons to the swiper container
-            const swiperContainer = wrapper.parentElement;
             
-            const nextBtn = document.createElement('div');
-            nextBtn.className = 'swiper-button-next';
-            swiperContainer.appendChild(nextBtn);
-            
-            const prevBtn = document.createElement('div');
-            prevBtn.className = 'swiper-button-prev';
-            swiperContainer.appendChild(prevBtn);
-
-            const initialSlideIndex = Math.floor(data.length / 2);
-
-            data.forEach((imgSrc, index) => {
+            data.forEach((imgSrc) => {
                 const safeImgSrc = encodeURI(imgSrc);
                 const slide = document.createElement('div');
                 slide.className = 'swiper-slide style1-slide';
                 slide.onclick = () => openLightbox(imgSrc);
-                
-                // Create actual img element
-                const img = document.createElement('img');
-                img.src = safeImgSrc;
-                
-                // Load the center 5 slides immediately, lazy load the rest
-                if (Math.abs(index - initialSlideIndex) <= 2) {
-                    img.loading = "eager";
-                } else {
-                    img.loading = "lazy"; 
-                }
-                
-                img.style.width = "100%";
-                img.style.height = "100%";
-                img.style.objectFit = "cover";
-                img.style.display = "block";
-                
-                slide.appendChild(img);
+                // Set as background image for perfect 16:9 aspect ratio coverage mapping Guardian of Galaxy style
+                slide.style.backgroundImage = `url('${safeImgSrc}')`;
+                slide.style.backgroundSize = "cover";
+                slide.style.backgroundPosition = "center";
                 wrapper.appendChild(slide);
             });
 
@@ -196,20 +162,14 @@
                     rotate: 0,
                     stretch: 150, // Pushes slides horizontally under
                     depth: 200,   // Scales background image depth
-                    modifier: 1,
+                    modifier: 1, 
                     slideShadows: true,
                 },
-                navigation: {
-                    nextEl: swiperContainer.querySelector('.swiper-button-next'),
-                    prevEl: swiperContainer.querySelector('.swiper-button-prev'),
+                pagination: { 
+                    el: "." + swiperClass + " .swiper-pagination", 
+                    clickable: true 
                 },
-                pagination: {
-                    el: swiperContainer.querySelector('.swiper-pagination'),
-                    clickable: true,
-                    dynamicBullets: true,
-                    dynamicMainBullets: window.innerWidth <= 768 ? 3 : 5,
-                },
-                initialSlide: Math.floor(data.length / 2)
+                initialSlide: Math.floor(data.length / 2) // start centered
             });
         }
 
@@ -245,7 +205,7 @@
                         const blob = await resp.blob();
                         folder.file(filename, blob);
                         successCount++;
-                    } catch (err) { }
+                    } catch (err) {}
                 });
 
                 await Promise.all(promises);
@@ -270,7 +230,13 @@
             document.getElementById('lightbox').style.display = "none";
         }
     </script>
-    <script src="js/script.js?v=20"></script>
-</body>
+"""
 
-</html>
+script_start = html_content.find("<script src=\"js/gallery-data.js\">")
+script_end = html_content.find("</body>")
+html_content = html_content[:script_start] + new_script + html_content[script_end:]
+
+with codecs.open(html_path, "w", "utf-8") as f:
+    f.write(html_content)
+
+print("Standardized Gallery successfully applied.")

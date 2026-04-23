@@ -1,7 +1,5 @@
 .gemini/
-.venv/
-.vscode/
-__pycache__/
-scratch/
 *.pyc
+__pycache__/
 .DS_Store
+Thumbs.db

@@ -268,3 +268,40 @@ body {
         height: 300px;
     }
 }
+
+/* Swiper Navigation and Pagination Styling */
+.swiper-button-next,
+.swiper-button-prev {
+    color: #FFD700 !important;
+    background: rgba(0, 0, 0, 0.5);
+    width: 45px !important;
+    height: 45px !important;
+    border-radius: 50%;
+    transition: 0.3s;
+    --swiper-navigation-size: 20px;
+    margin-top: -22px; /* Center vertically based on new height */
+}
+
+.swiper-button-prev {
+    left: 1% !important;
+}
+
+.swiper-button-next {
+    right: 1% !important;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    background: rgba(0, 0, 0, 0.8);
+    transform: scale(1.1);
+}
+
+.swiper-pagination-bullet {
+    background: #fff !important;
+    opacity: 0.5;
+}
+
+.swiper-pagination-bullet-active {
+    background: #FFD700 !important;
+    opacity: 1;
+}

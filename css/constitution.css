@@ -1,0 +1,361 @@
+/* Base Settings */
+body {
+    margin: 0;
+    color: #131417;
+    background: #fff;
+    overflow-x: hidden;
+}
+
+
+#consti_nav {
+    background-color: rgba(0, 0, 0, 0.8) !important;
+    transition: background-color 0.3s ease;
+}
+
+header.header-scrolled #consti_nav {
+    background-color: #ffffff !important;
+}
+
+/* Common Section Layout */
+.const-section {
+    position: relative;
+    width: 100%;
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    padding: 4rem 5%;
+    overflow: hidden;
+}
+
+/* The Background Image Handler */
+.const-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../Images/constitution_background.webp') no-repeat center right;
+    background-size: cover;
+    z-index: 1;
+}
+
+.const-bg.flip-left {
+    transform: scaleX(-1);
+}
+
+/* Ensure content floats above background */
+.const-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Alignment Classes */
+.align-left .const-content {
+    text-align: left;
+    margin-left: 0;
+    margin-right: auto;
+    width: 60%;
+}
+
+.align-right .const-content {
+    text-align: left;
+    margin-left: auto;
+    margin-right: 0;
+    width: 60%;
+}
+
+.const-bg.flip-left+.const-content {
+    margin-left: auto;
+    margin-right: 0;
+    width: 60%;
+}
+
+@media (max-width: 992px) {
+
+    .align-left .const-content,
+    .align-right .const-content,
+    .const-bg.flip-left+.const-content {
+        width: 100%;
+        padding: 2rem;
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 15px;
+        margin: 0 auto;
+    }
+}
+
+/* Typography */
+.const-title {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    color: #000;
+    line-height: 1.2;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.const-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: #444;
+}
+
+/* Buttons */
+.const-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, #00008B, #0000FF, #800080, #FFD700);
+    color: #fff;
+    padding: 0.8rem 2rem;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    font-size: 1rem;
+}
+
+.const-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 139, 0.4);
+}
+
+.const-btn-outline {
+    background: transparent;
+    color: #00008B;
+    border: 2px solid #00008B;
+}
+
+.const-btn-outline:hover {
+    background: rgba(0, 0, 139, 0.1);
+    box-shadow: none;
+}
+
+/* Read More Accordion Container */
+.expandable-content {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.6s ease, opacity 0.6s ease, margin 0.6s ease;
+}
+
+.expandable-content.expanded {
+    max-height: 1500px;
+    opacity: 1;
+    margin-top: 1.5rem;
+}
+
+/* Leadership Section Crossfade */
+.leadership-stack {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.leadership-permanent {
+    padding: 2rem;
+    transition: transform 1s ease, opacity 1s ease;
+}
+
+.leadership-hidden {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 2rem;
+    overflow-y: auto;
+    opacity: 0;
+    transform: translateX(50px);
+    transition: transform 1s ease, opacity 1s ease;
+    pointer-events: none;
+    color: #333;
+}
+
+.leadership-stack.show-hidden .leadership-permanent {
+    transform: translateX(-50px);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.leadership-stack.show-hidden .leadership-hidden {
+    transform: translateX(0);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Feature Cards (Images) */
+.card-grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.feature-card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 0.25rem;
+    border-right: 1px solid #ddd;
+}
+
+.feature-card:last-child {
+    border-right: none;
+}
+
+@media (max-width: 768px) {
+    .card-grid {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .feature-card {
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 2rem;
+    }
+
+    .feature-card:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+}
+
+.feature-card img {
+    width: 100%;
+    margin-bottom: 0.3rem;
+    border-radius: 8px;
+}
+
+.vision-grid .feature-card img {
+    height: 160px;
+    object-fit: cover;
+}
+
+.gov-grid .feature-card img {
+    height: 120px;
+    object-fit: contain;
+}
+
+.feature-card h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+/* Individual Card Read More (Governance Section) */
+.card-expandable-content {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.4s ease;
+    font-size: 0.95rem;
+    color: #000000;
+    margin-top: 0.5rem;
+    text-align: center;
+}
+
+.card-expandable-content.expanded {
+    max-height: 500px;
+    opacity: 1;
+    margin-bottom: 1rem;
+}
+
+/* Lists */
+.styled-list {
+    list-style: none;
+    padding: 0;
+}
+
+.styled-list li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.styled-list li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: #800080;
+    font-weight: bold;
+}
+
+/* Resource Section */
+.resource-section {
+    background: #fff;
+    padding: 4rem 5%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+
+.resource-left {
+    flex: 1;
+    min-width: 300px;
+}
+
+.resource-right {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+@media (max-width: 768px) {
+    .resource-right {
+        justify-content: flex-start;
+    }
+}
+
+.contact-card {
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border: 1px solid #eee;
+}
+
+.contact-card img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 1rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.contact-card h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.5rem;
+    color: #00008B;
+}
+
+.contact-card p,
+.contact-card a {
+    margin: 0.2rem 0;
+    font-size: 1.1rem;
+    color: #333;
+    text-decoration: none;
+}
+
+.contact-card a:hover {
+    color: #800080;
+}
