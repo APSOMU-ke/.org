@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://apsomu.org/sitemap.xml
+Sitemap: https://apsomu-ke.github.io/.org/sitemap.xml
