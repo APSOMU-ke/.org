@@ -90,11 +90,6 @@ body {
     opacity: 0.7;
 }
 
-/* --- STYLE 1: CURVED COVERFLOW --- */
-.style1-section {
-    /* Removed explicit backgrounds so .gallery-section background image can show through */
-}
-
 .style1-section h2 {
     background: none;
     -webkit-text-fill-color: #fffb00;
@@ -279,7 +274,8 @@ body {
     border-radius: 50%;
     transition: 0.3s;
     --swiper-navigation-size: 20px;
-    margin-top: -22px; /* Center vertically based on new height */
+    margin-top: -22px;
+    /* Center vertically based on new height */
 }
 
 .swiper-button-prev {
