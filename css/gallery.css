@@ -43,7 +43,7 @@ body {
     justify-content: center;
     overflow: hidden;
     /* Background image requested by user */
-    background: url("../Images/background.webp") center/cover fixed !important;
+    background: url("../Images/background (1).webp") center/cover fixed !important;
 }
 
 /* Pseudo-element to apply frosted glass blur over the background image */
