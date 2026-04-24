@@ -1294,8 +1294,8 @@ header.header-scrolled .partner-btn {
   left: 0;
   width: 100%;
   height: 100%;
-  /* Beautiful fade from white on the left to transparent on the right */
-  background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.85) 50%, rgba(255, 255, 255, 0.2) 100%);
+  /* Removed background as requested */
+  background: none;
   z-index: 2;
   transition: background 0.5s ease;
 }
@@ -1310,8 +1310,7 @@ header.header-scrolled .partner-btn {
 }
 
 .na-item:hover .na-bg-overlay {
-  /* Lighten the gradient slightly on hover to reveal more image */
-  background: linear-gradient(to right, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.7) 50%, rgba(255, 255, 255, 0.1) 100%);
+  background: none;
 }
 
 .na-content {
